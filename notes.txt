@@ -51,4 +51,31 @@ rails routes                                    #displays routes
 
       <---------------------------------------------------------------Fig 1.0-------------------------------------------------------------->
 
+    - .gitignore                                #Use this file to determine what does not get recorded in version control .. creds., keys, certs, ect..
+git rm . -r --cached                            #git uses a caching mechanism, you need to clear the cache
+
+git checkout -b branch_name                     #checkout a branch
+git push origin branch_name                     #pushes current branch to a remote branch on github
+
+git merge branch_name                           #merge a branch locally (used mostly in solo coding)
+git push                                        #push up to master branch on repo
+
+** On github.com                                #Create a pull request, use markdown to detail work (optional?) and merge with master (on github)
+git checkout master                             #switches back to master branch (used when working with teams)
+git pull                                        #this will pull from github any changes that were merged from other branches, into local env.
+
+
+    ** Rails Generators **                      #Rails generators scaffold/controller/model
+
+rails g controller Pages home about contact     #creates controller#action                                **Controllers names are in plural form**
+rails g model Skill title:string %:integer      #creates a model based on attribute:datatype provided     **Models are in singular form**
+
+    -* Rails Console *-
+
+rails c                                         #Built in rails console for direct access to the database
+
+  :001 > Skill.create!(title: "Rails", percent_utilized: 75)
+                                                #adding ! to create throws an error if there is one, otherwise the console will fail silently
+
+
 
