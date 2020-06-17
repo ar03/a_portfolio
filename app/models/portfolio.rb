@@ -1,5 +1,5 @@
 class Portfolio < ApplicationRecord
-
+  include Placeholder
   validates_presence_of :title, :body, :thumb_image, :main_image
 
   def self.angular                                              #defines scope for all Angular subtitles
@@ -12,12 +12,12 @@ class Portfolio < ApplicationRecord
 
   after_initialize :set_defaults
 
-  def set_defaults                                              # ||= operator explained by the example below
-    self.main_image ||= "https://placehold.it/600x400"          # if self.main_image == nil
-    self.thumb_image ||= "https://placehold.it/350manx20"       #   self.main_image = "https://placehold.it/600x400"
-  end                                                           # end
-end                                                             #
-                                                                # self.main image = "https://..." is incorrect and will cause
-                                                                # the placehold.it image to override any photo uploaded
+  def set_defaults                                                                    # ||= operator explained by the example below
+    self.main_image ||= Placeholder.image_generator(height: '600', width: '400')      # if self.main_image == nil
+    self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')     #   self.main_image = "https://placehold.it/600x400"
+  end                                                                                 # end
+end                                                                                   #
+                                                                                      # self.main image = "https://..." is incorrect and will cause
+                                                                                      # the placehold.it image to override any photo uploaded
 
 
