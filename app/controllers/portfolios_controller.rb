@@ -29,11 +29,11 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
-    @portfolio_item = Portfolio.find(params[:id])
+    portfolio_find_by_id
   end
 
   def update
-    @portfolio_item = Portfolio.find(params[:id])
+    portfolio_find_by_id
 
     respond_to do |format|
       if @portfolio_item.update(portfolio_params)
@@ -45,11 +45,11 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portfolio_item = Portfolio.find(params[:id])
+    portfolio_find_by_id
   end
 
   def destroy
-    @portfolio_item = Portfolio.find(params[:id])
+    portfolio_find_by_id
 
     @portfolio_item.destroy
       respond_to do |format|
@@ -65,5 +65,9 @@ class PortfoliosController < ApplicationController
       :subtitle,
       :body,
       technologies_attributes: [:name])
+  end
+
+  def portfolio_find_by_id
+    @portfolio_item = Portfolio.find(params[:id])
   end
 end
