@@ -18,16 +18,7 @@
 
     <%= render "shared/nav", location: "top" %>
     
-    <% if current_user.is_a?(User) %>
-      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Sign In", new_user_session_path %>
-      <%= link_to "Sign Up", new_user_registration_path %>
-    <% end %>
-    <%= yield %>
-
-    <% if session[:source] %>
-      <p>Thanks for visiting me from <%= session[:source] %></p>
-    <% end %>
+    <%= login_helper %>
+    <%= source_helper %>
   </body>
 </html>
