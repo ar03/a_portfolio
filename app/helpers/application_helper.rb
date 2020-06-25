@@ -16,4 +16,8 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    AHdevViewTool::Renderer.copyright 'Alex H', 'All rights reserved'
+  end
 end

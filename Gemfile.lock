@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/ar03/ahdev_view_tool
+  revision: f1aaf3236d6f6e55ef930b23f5487088e0c56944
+  specs:
+    ahdev_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -242,6 +248,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  ahdev_view_tool!
   bootsnap (>= 1.4.2)
   bootstrap (~> 4.5.0)
   byebug
