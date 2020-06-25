@@ -37,6 +37,11 @@ rails g scaffold Blog title:string body:text    #Scaffolds automatically create 
 
 rails routes                                    #displays routes
 
+                *Prefix                         #this is the method used in the code, gives full route path
+                *Verb                           #this determines if the interaction with the server is to send, recieve, or update information
+                *URI Pattern                    #full list of the path in the browser
+                *Controller#Action              #mapped controlller#action
+
       <---------------------------------------------------------------Fig 1.0-------------------------------------------------------------->
                  Prefix Verb    URI Pattern                                                                            Controller#Action
 
@@ -57,6 +62,7 @@ git rm . -r --cached                            #git uses a caching mechanism, y
 git checkout -b branch_name                     #checkout a branch
 git push origin branch_name                     #pushes current branch to a remote branch on github
 
+git checkout master                             #move back to the master branch before merging
 git merge branch_name                           #merge a branch locally (used mostly in solo coding)
 git push                                        #push up to master branch on repo
 
@@ -76,6 +82,10 @@ rails c                                         #Built in rails console for dire
 
   :001 > Skill.create!(title: "Rails", percent_utilized: 75)
                                                 #adding ! to create throws an error if there is one, otherwise the console will fail silently
+
+rails g resources Portfolio title:string subtitle:string body:text main_image:text thumb_image:text
+                                                #resources generator is similar to scaffold but skinny, it creates directories for MVC with no code
+                                                #store images as text, in a DB it stores the link/path to the image, not the image itself
 
 
 
