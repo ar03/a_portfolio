@@ -5,6 +5,6 @@
   <td><%= blog.topic_id %></td>
   <td><%= link_to blog.status, root_path %></td>
   <td><%= link_to 'Show', blog %></td>
-  <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-  <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Edit', edit_blog_path(blog) if logged_in?(:site_admin) %></td>
+  <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin) %></td>
 </tr>

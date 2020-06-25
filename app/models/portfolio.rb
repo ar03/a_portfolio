@@ -1,16 +1,16 @@
 class Portfolio < ApplicationRecord
-  has_many :technologies
-  accepts_nested_attributes_for :technologies, 
+  has_many :technologies, dependent: :delete_all
+  accepts_nested_attributes_for :technologies,
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
   include Placeholder
   validates_presence_of :title, :body, :thumb_image, :main_image
 
-  def self.angular                                              #defines scope for all Angular subtitles
+  def self.angular                                              #defines scope for all 'Angular' subtitles
     where(subtitle: 'Angular')
   end
 
-  def self.ruby_on_rails                                             #defines scope for all Angular subtitles
+  def self.ruby_on_rails                                             #defines scope for all 'Ruby on Rails' subtitles
     where(subtitle: 'Ruby on Rails')
   end
 

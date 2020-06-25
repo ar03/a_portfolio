@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ar03/ahdev_view_tool
-  revision: f1aaf3236d6f6e55ef930b23f5487088e0c56944
+  revision: 847d6c2c36a073537dfdb54d179b8dc4407627e9
   specs:
     ahdev_view_tool (0.1.0)
 

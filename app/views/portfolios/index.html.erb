@@ -1,5 +1,11 @@
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
 <h1>Portfolio Items</h1>
-
-<%= link_to "Create New", new_portfolio_url %>
-
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+<br>
+<%= source_helper %>
+<br>
+<%= link_to "Create New", new_portfolio_url if logged_in?(:site_admin) %>
+<br>
+    <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+    <hr>
+    <%= copyright_generator %>
