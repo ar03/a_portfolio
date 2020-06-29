@@ -3,7 +3,7 @@
   <head>
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    
+
     <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= csp_meta_tag %>
@@ -13,17 +13,20 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render "shared/application_nav", location: "top" %>
 
-    <%= render "shared/nav", location: "top" %>
-    
-    <%= login_helper %>
-    
-    <%= yield %>
+          <%= login_helper %>
 
-    <%= copyright_generator %>
+          <%= yield %>
 
-    <%= source_helper %>
+          <%= copyright_generator %>
+
+          <%= source_helper %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
