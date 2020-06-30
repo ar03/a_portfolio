@@ -12,3 +12,16 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 end
+
+
+
+Rails.application.routes.draw do
+  
+  resources :post
+
+  get 'about', to: 'pages#about'
+  get 'comment', to: 'comment#remove'
+  get 'comment', to: 'comment#approve'
+
+
+end
