@@ -1,5 +1,6 @@
 class PortfoliosController < ApplicationController
   before_action :portfolio_find_by_id, only: [:edit, :update, :show, :destroy]
+  before_action :set_technologies, only: [:edit, :new]
   access all: [:show, :index, :angular, :ror], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
   layout "portfolio"
 
@@ -16,8 +17,6 @@ class PortfoliosController < ApplicationController
   end
 
   def new
-    @portfolio_item = Portfolio.new
-    3.times { @portfolio_item.technologies.build }
   end
 
   def create
@@ -68,5 +67,10 @@ class PortfoliosController < ApplicationController
 
   def portfolio_find_by_id
     @portfolio_item = Portfolio.find(params[:id])
+  end
+
+  def set_technologies
+    @portfolio_item = Portfolio.new
+    3.times { @portfolio_item.technologies.build }
   end
 end
