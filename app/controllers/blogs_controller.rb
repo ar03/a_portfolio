@@ -6,7 +6,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.page(params.permit![:page]).per(5) #added .permit! to fix unpermitted params into hash exception
     @page_title = "ah.dev | Blog"
   end
 
