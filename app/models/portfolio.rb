@@ -1,7 +1,10 @@
 class Portfolio < ApplicationRecord
+
   has_many :technologies, dependent: :delete_all
   accepts_nested_attributes_for :technologies,
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
+  include ActiveRecord::Acts::List
+  acts_as_list
 
   include Placeholder
   validates_presence_of :title, :body, :thumb_image, :main_image

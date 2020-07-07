@@ -51,3 +51,6 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'ahdev_view_tool', git: 'https://github.com/ar03/ahdev_view_tool'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'kaminari', '~> 1.2.1'
+gem 'jquery-ui-rails', '>= 6.0.1'
+
+gem "acts_as_list", "~> 1.0"
