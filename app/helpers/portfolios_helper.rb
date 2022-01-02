@@ -1,11 +1,12 @@
 module PortfoliosHelper
-  def login_helper style = ''
-    if current_user.is_a?(GuestUser)
-      (link_to "Register", new_user_registration_path, class: style) +
-        " ".html_safe +
-      (link_to "Login", new_user_session_path, class: style)
-    else
-      link_to "Logout", destroy_user_session_path, method: :delete, class: style
+  
+  def portfolio_img img, type
+    if !img.nil?
+      img
+    elsif type == 'thumb'
+      image_generator(height: '350', width: '200')
+    elsif
+      image_generator(height: '600', width: '200')
     end
   end
 end

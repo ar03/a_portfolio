@@ -51,3 +51,8 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'ahdev_view_tool', git: 'https://github.com/ar03/ahdev_view_tool'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'kaminari', '~> 1.2.1'
+
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick', '~> 4.11'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
+gem 'carrierwave-aws', '~> 1.5'

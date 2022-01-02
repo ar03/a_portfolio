@@ -1,5 +1,6 @@
 <div class="album text-muted">
   <div class="container">
+    <%= link_to "New Portfolio Item", new_portfolio_path, class: "btn btn-primary" %>
     <div class="row">
       <%= render partial: 'portfolio_item', collection: @portfolio_items %>
     </div>
