@@ -21,8 +21,5 @@ class Portfolio < ApplicationRecord
     order("position ASC")
   end
 
-end                                                                                   #
-                                                                                      # self.main image = "https://..." is incorrect and will cause
-                                                                                      # the placehold.it image to override any photo uploaded
-
+end
 
