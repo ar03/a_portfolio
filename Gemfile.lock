@@ -106,6 +106,7 @@ GEM
     carrierwave-aws (1.5.0)
       aws-sdk-s3 (~> 1.0)
       carrierwave (~> 2.0)
+    cocoon (1.2.15)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
     crass (1.0.6)
@@ -312,6 +313,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 2.0)
   carrierwave-aws (~> 1.5)
+  cocoon (~> 1.2, >= 1.2.9)
   devise (~> 4.7, >= 4.7.2)
   dotenv-rails (~> 2.1, >= 2.1.1)
   font-awesome-rails (~> 4.7, >= 4.7.0.2)
